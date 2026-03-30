@@ -1,0 +1,45 @@
+<html>
+  text-align:center;
+  background:black;
+  color:white;
+}
+.box {
+  margin-top:120px;
+  padding:30px;
+  border:2px solid cyan;
+  box-shadow:0 0 20px cyan;
+  display:inline-block;
+}
+input {
+  padding:10px;
+  margin:10px;
+  width:200px;
+}
+button {
+  padding:10px 20px;
+  background:black;
+  color:white;
+  border:2px solid cyan;
+  box-shadow:0 0 10px cyan;
+}
+</style>
+</head>
+<body>
+  <div class="box">
+    <h2>Login</h2>
+    <input id="name" placeholder="Name"><br>
+    <input id="phone" placeholder="Phone"><br>
+    <input id="vehicle" placeholder="Vehicle Number"><br>
+    <button onclick="next()">Submit</button>
+  </div>
+
+<script>
+function next(){
+  localStorage.setItem("name", name.value);
+  localStorage.setItem("phone", phone.value);
+  localStorage.setItem("vehicle", vehicle.value);
+  window.location = "places.html";
+}
+</script>
+</body>
+</html>
