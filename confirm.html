@@ -1,0 +1,26 @@
+<html>
+<head>
+<style>
+body {text-align:center; background:black; color:white;}
+button {
+  padding:10px 20px;
+  border:2px solid cyan;
+  box-shadow:0 0 10px cyan;
+  background:black;
+  color:white;
+}
+</style>
+</head>
+<body>
+<h2>Confirm Booking</h2>
+<p id="data"></p>
+<button onclick="confirm()">Confirm</button>
+
+<script>
+data.innerHTML = "Slot " + localStorage.getItem("slot");
+function confirm(){
+  alert("Parking Space Allotted!");
+}
+</script>
+</body>
+</html>
