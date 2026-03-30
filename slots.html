@@ -1,0 +1,61 @@
+<html>
+<head>
+<style>
+body {text-align:center; background:#000; color:white;}
+.container {
+  display:flex;
+  justify-content:space-between;
+  margin:50px;
+}
+.column {
+  display:flex;
+  flex-direction:column;
+}
+.slot {
+  width:120px;
+  height:60px;
+  margin:10px;
+  border:2px solid white;
+  box-shadow:0 0 10px white;
+}
+.booked {
+  background:lightgrey;
+}
+.free {
+  background:transparent;
+}
+</style>
+</head>
+<body>
+<h2>Parking Slots</h2>
+
+<div class="container">
+  <div class="column" id="left"></div>
+  <div class="column" id="right"></div>
+</div>
+
+<script>
+let slots = [0,1,0,1,0,0]; // 0 free, 1 booked
+
+slots.forEach((s,i)=>{
+  let div = document.createElement("div");
+  div.className = "slot " + (s==1 ? "booked":"free");
+
+  if(s==0){
+    div.onclick = ()=>{
+      localStorage.setItem("slot", i+1);
+      window.location = "confirm.html";
+    }
+  }
+
+  if(i < slots.length/2){
+    left.appendChild(div);
+  } else {
+    right.appendChild(div);
+  }
+});
+</script>
+
+</body>
+</html>
+
